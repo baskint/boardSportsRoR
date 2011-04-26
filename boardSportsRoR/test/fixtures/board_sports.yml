@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  BoardName: MyString
-  board_id: 1
-
-two:
-  BoardName: MyString
-  board_id: 1
