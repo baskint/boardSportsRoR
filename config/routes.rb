@@ -1,4 +1,8 @@
 BoardSports::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/contact"
+
   resources :board_sports
 
   # The priority is based upon order of creation:
