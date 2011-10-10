@@ -1,7 +1,17 @@
 BoardSports::Application.routes.draw do
+  get "windsurf/create"
+
+  get "windsurf/show"
+
+  get "windsurf/delete"
+
+  get "windsurf/list"
+
   get "pages/home"
 
   get "pages/contact"
+
+  #match ":id" => "windsurf#delete"
 
   resources :board_sports
 

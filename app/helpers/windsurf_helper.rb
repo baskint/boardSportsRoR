@@ -1,0 +1,2 @@
+module WindsurfHelper
+end
