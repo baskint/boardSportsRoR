@@ -3,6 +3,8 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -19,6 +21,7 @@
       </profile-state>
     </entry>
   </component>
+>>>>>>> 0d67186628fe104d206f224ea03a98df0fb00e23
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>

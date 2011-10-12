@@ -80,4 +80,8 @@ class BoardSportsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def windsurf
+
+  end
 end
