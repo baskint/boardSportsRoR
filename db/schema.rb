@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_052107) do
 
   create_table "garmin_activities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "activity_type"
-    t.date "date"
+    t.datetime "date_time"
     t.string "location"
     t.decimal "distance", precision: 10, scale: 2
     t.integer "calories"
