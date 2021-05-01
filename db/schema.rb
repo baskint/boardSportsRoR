@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_045000) do
+ActiveRecord::Schema.define(version: 2021_05_01_052107) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "garmin_activities", force: :cascade do |t|
+  create_table "garmin_activities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "activity_type"
-    t.date "activity_date"
-    t.decimal "distance"
+    t.date "date"
+    t.string "location"
+    t.decimal "distance", precision: 10, scale: 2
     t.integer "calories"
+    t.integer "duration"
+    t.integer "avg_hr"
+    t.integer "max_hr"
+    t.decimal "avg_speed", precision: 10, scale: 1
+    t.decimal "max_speed", precision: 10, scale: 1
+    t.integer "avg_pace"
+    t.integer "max_pace"
+    t.integer "avg_bike_cadence"
+    t.integer "max_bike_cadence"
+    t.integer "min_temp"
+    t.integer "climb_time"
+    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

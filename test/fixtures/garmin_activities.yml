@@ -2,12 +2,12 @@
 
 one:
   activity_type: MyString
-  activity_date: 2021-04-30
+  activity_date: 2021-05-01
   distance: 9.99
   calories: 1
 
 two:
   activity_type: MyString
-  activity_date: 2021-04-30
+  activity_date: 2021-05-01
   distance: 9.99
   calories: 1
