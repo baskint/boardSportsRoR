@@ -1,0 +1,2 @@
+class GarminActivity < ApplicationRecord
+end
