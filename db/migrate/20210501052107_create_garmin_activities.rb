@@ -2,7 +2,7 @@ class CreateGarminActivities < ActiveRecord::Migration[6.1]
   def change
     create_table :garmin_activities, id: :uuid do |t|
       t.string :activity_type
-      t.datetime :date_time
+      t.datetime :date_time, null: false, index: { unique: true }
       t.string :location
       t.decimal :distance, precision: 10, scale: 2
       t.integer :calories
