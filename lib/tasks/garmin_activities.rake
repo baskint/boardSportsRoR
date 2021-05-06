@@ -13,8 +13,16 @@ namespace :garmin_activities do
       "Distance" => :distance,
       "Calories" => :calories,
       "Time" => :duration,
+      "Avg HR" => :avg_hr,
+      "Max HR" => :max_hr,
       "Avg Speed" => :avg_speed,
-      "Max Speed" => :max_speed
+      "Max Speed" => :max_speed,
+      "Avg Pace" => :avg_pace,
+      "Max Pace" => :max_pace,
+      "Avg Bike Cadence" => :avg_bike_cadence,
+      "Max Bike Cadence" => :max_bike_cadence,
+      "Min Temp" => :min_temp,
+      "Climb Time" => :climb_time
     }
     # dirname = File.basename(Dir.pwd)
     # puts dirname
@@ -32,6 +40,8 @@ namespace :garmin_activities do
           if ActivityTypeMatcher.match(v)
             data[:activity_type] =  ActivityTypeMatcher.match(v)
           end
+        # elsif k == "Climb Time"
+        #   data[key] = DurationCalculator.compute(v)
         else
           data[key] = v if key
         end
