@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_052107) do
+ActiveRecord::Schema.define(version: 2021_05_19_023418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2021_05_01_052107) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["date_time"], name: "index_garmin_activities_on_date_time", unique: true
+  end
+
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "desc"
+    t.string "type"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
