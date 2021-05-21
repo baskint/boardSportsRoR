@@ -27,7 +27,7 @@ namespace :garmin_activities do
     # dirname = File.basename(Dir.pwd)
     # puts dirname
 
-    csv_text = File.read('./test/fixtures/ga_5_15_2021.csv')
+    csv_text = File.read('./test/fixtures/ga_5_20_2021.csv')
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       data = {}
