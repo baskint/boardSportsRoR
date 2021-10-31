@@ -1,7 +1,7 @@
-FROM ruby:3.0.1-alpine3.13
+FROM ruby:3.0.2-alpine3.13
 RUN apk update
 RUN apk add --no-cache alpine-sdk postgresql-dev tzdata nodejs yarn
-RUN gem install bundler -v 2.1.4
+RUN gem install bundler
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN bundle config build.nokogiri --use-system-libraries
