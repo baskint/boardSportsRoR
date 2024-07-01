@@ -1,0 +1,42 @@
+<%= form_with(model: wind_session, local: true) do |form| %>
+    <% if wind_session.errors.any? %>
+      <div class="bg-red-500 text-white p-4 mb-4">
+        <h2><%= pluralize(wind_session.errors.count, "error") %> prohibited this wind session from being saved:</h2>
+        <ul>
+          <% wind_session.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="mb-4">
+      <%= form.label :name, class: "block text-gray-700" %>
+      <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  
+    <div class="mb-4">
+      <%= form.label :location, class: "block text-gray-700" %>
+      <%= form.text_field :location, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  
+    <div class="mb-4">
+      <%= form.label :session_date, class: "block text-gray-700" %>
+      <%= form.date_select :session_date, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  
+    <div class="mb-4">
+      <%= form.label :duration_hours, class: "block text-gray-700" %>
+      <%= form.number_field :duration_hours, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  
+    <div class="mb-4">
+      <%= form.label :notes, class: "block text-gray-700" %>
+      <%= form.text_area :notes, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  
+    <div class="mb-4">
+      <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    </div>
+  <% end %>
+  

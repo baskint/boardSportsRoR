@@ -3,13 +3,13 @@
 one:
   name: MyString
   location: MyString
-  session_date: 2024-06-22
+  session_date: 2024-07-01
   duration_hours: 1.5
   notes: MyText
 
 two:
   name: MyString
   location: MyString
-  session_date: 2024-06-22
+  session_date: 2024-07-01
   duration_hours: 1.5
   notes: MyText
