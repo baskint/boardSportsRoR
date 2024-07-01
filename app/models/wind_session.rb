@@ -1,0 +1,2 @@
+class WindSession < ApplicationRecord
+end
