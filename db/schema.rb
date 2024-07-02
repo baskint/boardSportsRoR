@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_151257) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_02_152105) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_151257) do
     t.decimal "board_volume"
     t.string "board_type"
     t.date "last_used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "garmin_activities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "activity_type"
+    t.datetime "date_time"
+    t.string "location"
+    t.decimal "distance"
+    t.integer "calories"
+    t.string "duration"
+    t.integer "avg_hr"
+    t.integer "max_hr"
+    t.decimal "avg_speed"
+    t.decimal "max_speed"
+    t.integer "avg_pace"
+    t.integer "max_pace"
+    t.integer "avg_bike_cadence"
+    t.integer "max_bike_cadence"
+    t.integer "min_temp"
+    t.integer "climb_time"
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
