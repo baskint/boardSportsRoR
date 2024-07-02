@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       resources :garmin_activities, only: [:index, :show, :create, :update, :destroy]
     end
   end
+
+  root "home#index"
 end
