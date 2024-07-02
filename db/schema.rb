@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_23_003617) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_02_143838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string "board_name"
+    t.date "purchase_date"
+    t.decimal "purchase_price"
+    t.decimal "current_price"
+    t.decimal "board_length"
+    t.decimal "board_volume"
+    t.string "board_type"
+    t.date "last_used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "wind_sessions", force: :cascade do |t|
     t.string "name"

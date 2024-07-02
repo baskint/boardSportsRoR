@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  board_name: MyString
+  purchase_date: 2024-07-02
+  purchase_price: 9.99
+  current_price: 9.99
+  board_length: 9.99
+  board_volume: 9.99
+  board_type: MyString
+  last_used_date: 2024-07-02
+
+two:
+  board_name: MyString
+  purchase_date: 2024-07-02
+  purchase_price: 9.99
+  current_price: 9.99
+  board_length: 9.99
+  board_volume: 9.99
+  board_type: MyString
+  last_used_date: 2024-07-02

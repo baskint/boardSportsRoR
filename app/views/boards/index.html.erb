@@ -1,0 +1,38 @@
+<h1 class="text-2xl font-bold mb-4">Boards</h1>
+
+<table class="min-w-full bg-white">
+  <thead class="bg-gray-800 text-white">
+    <tr>
+      <th class="w-1/4 py-2">Board Name</th>
+      <th class="w-1/4 py-2">Purchase Date</th>
+      <th class="w-1/4 py-2">Purchase Price</th>
+      <th class="w-1/4 py-2">Current Price</th>
+      <th class="w-1/4 py-2">Board Length</th>
+      <th class="w-1/4 py-2">Board Volume</th>
+      <th class="w-1/4 py-2">Board Type</th>
+      <th class="w-1/4 py-2">Last Used Date</th>
+      <th class="w-1/4 py-2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boards.each do |board| %>
+      <tr class="bg-gray-200">
+        <td class="border px-4 py-2"><%= board.board_name %></td>
+        <td class="border px-4 py-2"><%= board.purchase_date %></td>
+        <td class="border px-4 py-2"><%= board.purchase_price %></td>
+        <td class="border px-4 py-2"><%= board.current_price %></td>
+        <td class="border px-4 py-2"><%= board.board_length %></td>
+        <td class="border px-4 py-2"><%= board.board_volume %></td>
+        <td class="border px-4 py-2"><%= board.board_type %></td>
+        <td class="border px-4 py-2"><%= board.last_used_date %></td>
+        <td class="border px-4 py-2">
+          <%= link_to 'Show', board, class: "text-blue-500 hover:text-blue-700" %>
+          <%= link_to 'Edit', edit_board_path(board), class: "text-green-500 hover:text-green-700" %>
+          <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-500 hover:text-red-700" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Board', new_board_path, class: "mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>

@@ -1,16 +1,23 @@
 class WindSessionsController < ApplicationController
-  before_action :set_wind_session, only: %i[ show update destroy ]
+  before_action :set_wind_session, only: %i[ show edit update destroy ]
 
   # GET /wind_sessions
   def index
     @wind_sessions = WindSession.all
-
-    render json: @wind_sessions
+    logger.debug "WindSessionsController#index: Found #{@wind_sessions.count} wind sessions"
   end
 
   # GET /wind_sessions/1
   def show
-    render json: @wind_session
+  end
+
+  # GET /wind_sessions/new
+  def new
+    @wind_session = WindSession.new
+  end
+
+  # GET /wind_sessions/1/edit
+  def edit
   end
 
   # POST /wind_sessions
@@ -18,24 +25,25 @@ class WindSessionsController < ApplicationController
     @wind_session = WindSession.new(wind_session_params)
 
     if @wind_session.save
-      render json: @wind_session, status: :created, location: @wind_session
+      redirect_to @wind_session, notice: 'Wind session was successfully created.'
     else
-      render json: @wind_session.errors, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /wind_sessions/1
   def update
     if @wind_session.update(wind_session_params)
-      render json: @wind_session
+      redirect_to @wind_session, notice: 'Wind session was successfully updated.'
     else
-      render json: @wind_session.errors, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /wind_sessions/1
   def destroy
-    @wind_session.destroy!
+    @wind_session.destroy
+    redirect_to wind_sessions_url, notice: 'Wind session was successfully destroyed.'
   end
 
   private
