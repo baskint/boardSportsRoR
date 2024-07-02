@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_145819) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_02_151257) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_145819) do
     t.decimal "board_volume"
     t.string "board_type"
     t.date "last_used_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wind_sessions", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.date "session_date"
+    t.float "duration_hours"
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

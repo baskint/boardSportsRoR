@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :wind_sessions
   resources :boards
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

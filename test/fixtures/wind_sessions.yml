@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  session_date: 2024-07-02
+  duration_hours: 1.5
+  notes: MyText
+
+two:
+  name: MyString
+  location: MyString
+  session_date: 2024-07-02
+  duration_hours: 1.5
+  notes: MyText
