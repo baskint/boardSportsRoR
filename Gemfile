@@ -50,11 +50,20 @@ gem "bootsnap", require: false
 # fix until ruby 3.3.4 is release
 gem 'net-pop', github: 'ruby/net-pop'
 
+# parsing environment
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 end
 
+# adding resque
+gem 'resque'
+gem 'resque-scheduler'
+
+# google cloud pubsub
+gem 'google-cloud-pubsub'
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -64,6 +73,14 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  if ENV['USE_REDIS_PUBSUB'] == 'true'
+    # adding resque
+    gem 'resque'
+    gem 'resque-scheduler'
+
+    # google cloud pubsub
+    gem 'google-cloud-pubsub'
+  end
 end
 
 group :test do

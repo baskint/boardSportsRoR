@@ -1,0 +1,4 @@
+check_pubsub_topic:
+  cron: "*/15 * * * * *" # Every 15 seconds
+  class: CheckPubSubTopicJob
+  queue: default

@@ -15,5 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
+  require 'resque/server'
+  mount Resque::Server.new, at: '/resque'
+
   root "home#index"
 end
